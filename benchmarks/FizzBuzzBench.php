@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use HJenneberg\FizzBuzz\FizzBuzzOne;
+use HJenneberg\FizzBuzz\FizzBuzzOneBetter;
 use PhpBench\Benchmark\Metadata\Annotations\Iterations;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 
@@ -13,10 +14,18 @@ class FizzBuzzBench
 {
     /**
      * @Revs(1000)
-     * @Iterations(5)
+     * @Iterations(10)
      */
-    public function benchGet()
+    public function benchOne()
     {
-        FizzBuzzOne::get(1000);
+        FizzBuzzOne::get(10000);
+    }
+    /**
+     * @Revs(1000)
+     * @Iterations(10)
+     */
+    public function benchOneBetter()
+    {
+        FizzBuzzOneBetter::get(10000);
     }
 }
