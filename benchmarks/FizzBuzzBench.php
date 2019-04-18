@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use HJenneberg\FizzBuzz\FizzBuzz;
+use HJenneberg\FizzBuzz\FizzBuzzOne;
 use PhpBench\Benchmark\Metadata\Annotations\Iterations;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 
@@ -17,6 +17,6 @@ class FizzBuzzBench
      */
     public function benchGet()
     {
-        FizzBuzz::get(1000);
+        FizzBuzzOne::get(1000);
     }
 }

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace HJenneberg\FizzBuzz;
 
 /**
- * Class FizzBuzz
+ * Class FizzBuzzOne
  */
-class FizzBuzz
+class FizzBuzzOne implements FizzBuzzInterface
 {
     /**
      * @param int $limit
