@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use HJenneberg\FizzBuzz\FizzBuzzOneBetter;
+use HJenneberg\FizzBuzz\FizzBuzzOneCleaner;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class FizzBuzzOneBetterTest
  */
-final class FizzBuzzOneBetterTest extends TestCase
+final class FizzBuzzOneCleanerTest extends TestCase
 {
     /**
      * @noinspection PhpMethodNamingConventionInspection
@@ -23,7 +23,7 @@ final class FizzBuzzOneBetterTest extends TestCase
             11 => 11, 12 => 'Fizz', 13 => 13, 14 => 14, 15 => 'FizzBuzz',
             16 => 16,
         ];
-        $result = FizzBuzzOneBetter::get(16);
+        $result = FizzBuzzOneCleaner::get(16);
 
         self::assertSame($expected, $result);
     }
