@@ -1,5 +1,6 @@
 {
     "name": "hjenneberg/php-fizz-buzz",
+    "description": "FizzBuzz is a group word game for children to teach them about division.",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -15,6 +16,8 @@
         "php": "^7.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.1"
+        "phpunit/phpunit": "^8.1",
+        "phpbench/phpbench": "@dev",
+        "infection/infection": "^0.12.2"
     }
 }
