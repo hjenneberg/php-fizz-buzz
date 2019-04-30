@@ -9,7 +9,7 @@ namespace HJenneberg\FizzBuzz;
  */
 class FizzBuzzTwo implements FizzBuzzInterface
 {
-   /**
+    /**
      * @param int $limit
      *
      * @return array
@@ -18,16 +18,16 @@ class FizzBuzzTwo implements FizzBuzzInterface
     {
         $items = [];
 
-        for ($i=1; $i <= $limit; $i++) {
-            if (0 === $i%15) {
+        for ($i = 1; $i <= $limit; $i++) {
+            if (0 === $i % 15) {
                 $items[$i] = 'FizzBuzz';
                 continue;
             }
-            if (0 === $i%5) {
+            if (0 === $i % 5) {
                 $items[$i] = 'Buzz';
                 continue;
             }
-            if (0 === $i%3) {
+            if (0 === $i % 3) {
                 $items[$i] = 'Fizz';
                 continue;
             }
