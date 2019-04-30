@@ -7,7 +7,7 @@ namespace HJenneberg\FizzBuzz;
 /**
  * Class FizzBuzzOne
  */
-class FizzBuzzOne implements FizzBuzzInterface
+class FizzBuzzOne implements FizzBuzzStaticInterface
 {
     /**
      * @param int $limit

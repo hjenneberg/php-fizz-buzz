@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace HJenneberg\FizzBuzz;
 
 /**
- * Class FizzBuzzTwo
+ * Class FizzBuzzTwoA
  */
-class FizzBuzzTwo implements FizzBuzzStaticInterface
+class FizzBuzzTwoA implements FizzBuzzStaticInterface
 {
     /**
      * @param int $limit
@@ -21,18 +21,14 @@ class FizzBuzzTwo implements FizzBuzzStaticInterface
         for ($i = 1; $i <= $limit; $i++) {
             if (0 === $i % 15) {
                 $items[$i] = 'FizzBuzz';
-                continue;
-            }
-            if (0 === $i % 5) {
+            } elseif (0 === $i % 5) {
                 $items[$i] = 'Buzz';
-                continue;
-            }
-            if (0 === $i % 3) {
+            } elseif (0 === $i % 3) {
                 $items[$i] = 'Fizz';
-                continue;
+            } else {
+                $items[$i] = $i;
             }
 
-            $items[$i] = $i;
         }
 
         return $items;

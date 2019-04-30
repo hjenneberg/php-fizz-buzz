@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace HJenneberg\FizzBuzz;
 
 /**
- * Interface FizzBuzzInterface
+ * Interface FizzBuzzStaticInterface
  */
-interface FizzBuzzInterface
+interface FizzBuzzStaticInterface
 {
     /**
      * @param int $limit
      *
      * @return array
      */
-    public function get(int $limit): array;
+    public static function get(int $limit): array;
 }

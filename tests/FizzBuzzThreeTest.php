@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-use HJenneberg\FizzBuzz\FizzBuzzTwoCleaner;
+
+use HJenneberg\FizzBuzz\FizzBuzzThreeB;
+use HJenneberg\FizzBuzz\FizzBuzzThreeC;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class FizzBuzzTwoCleanerTest
+ * Class FizzBuzzThreeTest
  */
-final class FizzBuzzTwoCleanerTest extends TestCase
+final class FizzBuzzThreeTest extends TestCase
 {
     /**
      * @noinspection PhpMethodNamingConventionInspection
@@ -23,8 +25,8 @@ final class FizzBuzzTwoCleanerTest extends TestCase
             11 => 11, 12 => 'Fizz', 13 => 13, 14 => 14, 15 => 'FizzBuzz',
             16 => 16,
         ];
-        $result = FizzBuzzTwoCleaner::get(16);
 
-        self::assertSame($expected, $result);
+        self::assertSame($expected, (new FizzBuzzThreeB())->get(16));
+        self::assertSame($expected, (new FizzBuzzThreeC())->get(16));
     }
 }

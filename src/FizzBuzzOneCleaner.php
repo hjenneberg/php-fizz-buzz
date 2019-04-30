@@ -9,7 +9,7 @@ use Closure;
 /**
  * Class FizzBuzzOneBetter
  */
-final class FizzBuzzOneCleaner implements FizzBuzzInterface
+final class FizzBuzzOneCleaner implements FizzBuzzStaticInterface
 {
     const FIZZ_DIV = 3;
     const FIZZ_ITSELF = 'Fizz';
