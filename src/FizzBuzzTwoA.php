@@ -28,7 +28,6 @@ class FizzBuzzTwoA implements FizzBuzzStaticInterface
             } else {
                 $items[$i] = $i;
             }
-
         }
 
         return $items;
