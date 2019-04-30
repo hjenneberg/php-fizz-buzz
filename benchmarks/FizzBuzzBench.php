@@ -6,6 +6,7 @@ use HJenneberg\FizzBuzz\FizzBuzzOne;
 use HJenneberg\FizzBuzz\FizzBuzzOneCleaner;
 use HJenneberg\FizzBuzz\FizzBuzzTwo;
 use HJenneberg\FizzBuzz\FizzBuzzTwoCleaner;
+use HJenneberg\FizzBuzz\FizzBuzzTwoCleanest;
 use PhpBench\Benchmark\Metadata\Annotations\Iterations;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 
@@ -50,5 +51,14 @@ final class FizzBuzzBench
     public function benchTwoCleaner()
     {
         FizzBuzzTwoCleaner::get(self::FIZZ_UP_TO);
+    }
+
+    /**
+     * @Revs(500)
+     * @Iterations(3)
+     */
+    public function benchTwoCleanest()
+    {
+        FizzBuzzTwoCleanest::get(self::FIZZ_UP_TO);
     }
 }
