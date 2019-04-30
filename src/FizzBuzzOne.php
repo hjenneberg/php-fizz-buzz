@@ -19,13 +19,13 @@ class FizzBuzzOne implements FizzBuzzStaticInterface
         $items = array_combine(range(1, $limit), range(1, $limit));
         $items = array_map(
             function (int $item) {
-                if (0 === $item%15) {
+                if (0 === $item % 15) {
                     return 'FizzBuzz';
                 }
-                if (0 === $item%5) {
+                if (0 === $item % 5) {
                     return 'Buzz';
                 }
-                if (0 === $item%3) {
+                if (0 === $item % 3) {
                     return 'Fizz';
                 }
                 return $item;

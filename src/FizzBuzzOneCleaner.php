@@ -28,6 +28,18 @@ final class FizzBuzzOneCleaner implements FizzBuzzStaticInterface
     }
 
     /**
+     * @param int $limit
+     *
+     * @return array
+     */
+    private static function getRange(int $limit): array
+    {
+        $range = range(1, $limit);
+
+        return array_combine($range, $range);
+    }
+
+    /**
      * @param int $i
      *
      * @return string|int
@@ -58,16 +70,6 @@ final class FizzBuzzOneCleaner implements FizzBuzzStaticInterface
     }
 
     /**
-     * @param int $i
-     *
-     * @return bool
-     */
-    private static function isBuzz(int $i): bool
-    {
-        return self::isDividableBy(self::BUZZ_DIV)($i);
-    }
-
-    /**
      * @param int $by
      *
      * @return Closure
@@ -80,15 +82,13 @@ final class FizzBuzzOneCleaner implements FizzBuzzStaticInterface
     }
 
     /**
-     * @param int $limit
+     * @param int $i
      *
-     * @return array
+     * @return bool
      */
-    private static function getRange(int $limit): array
+    private static function isBuzz(int $i): bool
     {
-        $range = range(1, $limit);
-
-        return array_combine($range, $range);
+        return self::isDividableBy(self::BUZZ_DIV)($i);
     }
 
 }

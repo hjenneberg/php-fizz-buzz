@@ -38,11 +38,23 @@ class FizzBuzzTwoCleanest implements FizzBuzzStaticInterface
 
         $items = [];
 
-        for ($i=1; $i <= $limit; $i++) {
+        for ($i = 1; $i <= $limit; $i++) {
             $items[$i] = self::decideOn($i);
         }
 
         return $items;
+    }
+
+    /**
+     * @param int $by
+     *
+     * @return Closure
+     */
+    private static function isDividableBy(int $by): Closure
+    {
+        return function ($i) use ($by) {
+            return 0 === $i % $by;
+        };
     }
 
     /**
@@ -83,17 +95,5 @@ class FizzBuzzTwoCleanest implements FizzBuzzStaticInterface
     private static function isBuzz(int $i): bool
     {
         return (self::$isDividableByBuzz)($i);
-    }
-
-    /**
-     * @param int $by
-     *
-     * @return Closure
-     */
-    private static function isDividableBy(int $by): Closure
-    {
-        return function ($i) use ($by) {
-            return 0 === $i % $by;
-        };
     }
 }
