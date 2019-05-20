@@ -10,12 +10,12 @@ use PhpBench\Benchmark\Metadata\Annotations\Revs;
 /**
  * Class FizzBuzzBench
  *
- * @Revs(1000)
+ * @Revs(200)
  * @Iterations(5)
  */
 final class FizzBuzzBench
 {
-    const FIZZ_UP_TO = 1000;
+    const FIZZ_UP_TO = 10000;
 
     public function benchOne()
     {

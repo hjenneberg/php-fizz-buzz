@@ -7,7 +7,7 @@ namespace HJenneberg\FizzBuzz\Parts;
 /**
  * Class Fizz
  */
-class Fizz implements PartInterface
+class Fizz extends AbstractPart
 {
     /**
      * @return string
@@ -20,7 +20,7 @@ class Fizz implements PartInterface
     /**
      * @return int
      */
-    public static function divisor(): int
+    protected static function divisor(): int
     {
         return 3;
     }

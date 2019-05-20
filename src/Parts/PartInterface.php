@@ -15,7 +15,9 @@ interface PartInterface
     public static function title(): string;
 
     /**
-     * @return int
+     * @param int $i
+     *
+     * @return bool
      */
-    public static function divisor(): int;
+    public static function is(int $i): bool;
 }
