@@ -62,7 +62,7 @@ final class FizzBuzzOne implements FizzBuzzStaticInterface
      */
     private static function isFizz(int $i): bool
     {
-        return self::isDividableBy(Fizz::divisor())($i);
+        return self::isDivisible(Fizz::divisor())($i);
     }
 
     /**
@@ -72,7 +72,7 @@ final class FizzBuzzOne implements FizzBuzzStaticInterface
      */
     private static function isBuzz(int $i): bool
     {
-        return self::isDividableBy(Buzz::divisor())($i);
+        return self::isDivisible(Buzz::divisor())($i);
     }
 
     /**
@@ -80,7 +80,7 @@ final class FizzBuzzOne implements FizzBuzzStaticInterface
      *
      * @return Closure
      */
-    private static function isDividableBy(int $by): Closure
+    private static function isDivisible(int $by): Closure
     {
         return function ($i) use ($by) {
             return 0 === $i % $by;
