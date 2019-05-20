@@ -16,11 +16,11 @@ class FizzBuzzTwo implements FizzBuzzStaticInterface
     /**
      * @var Closure
      */
-    private static $isDividableByFizz;
+    private static $isDivisibleByFizz;
     /**
      * @var Closure
      */
-    private static $isDividableByBuzz;
+    private static $isDivisibleByBuzz;
 
     /**
      * @param int $limit
@@ -29,8 +29,8 @@ class FizzBuzzTwo implements FizzBuzzStaticInterface
      */
     public static function get(int $limit): array
     {
-        self::$isDividableByFizz = self::isDividableBy(Fizz::divisor());
-        self::$isDividableByBuzz = self::isDividableBy(Buzz::divisor());
+        self::$isDivisibleByFizz = self::isDivisible(Fizz::divisor());
+        self::$isDivisibleByBuzz = self::isDivisible(Buzz::divisor());
 
         $items = [];
 
@@ -39,18 +39,6 @@ class FizzBuzzTwo implements FizzBuzzStaticInterface
         }
 
         return $items;
-    }
-
-    /**
-     * @param int $by
-     *
-     * @return Closure
-     */
-    private static function isDividableBy(int $by): Closure
-    {
-        return function ($i) use ($by) {
-            return 0 === $i % $by;
-        };
     }
 
     /**
@@ -80,7 +68,7 @@ class FizzBuzzTwo implements FizzBuzzStaticInterface
      */
     private static function isFizz(int $i): bool
     {
-        return (self::$isDividableByFizz)($i);
+        return (self::$isDivisibleByFizz)($i);
     }
 
     /**
@@ -90,6 +78,18 @@ class FizzBuzzTwo implements FizzBuzzStaticInterface
      */
     private static function isBuzz(int $i): bool
     {
-        return (self::$isDividableByBuzz)($i);
+        return (self::$isDivisibleByBuzz)($i);
+    }
+
+    /**
+     * @param int $by
+     *
+     * @return Closure
+     */
+    private static function isDivisible(int $by): Closure
+    {
+        return function ($i) use ($by) {
+            return 0 === $i % $by;
+        };
     }
 }
