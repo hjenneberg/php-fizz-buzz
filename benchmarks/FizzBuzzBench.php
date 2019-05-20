@@ -6,11 +6,6 @@ use HJenneberg\FizzBuzz\FizzBuzzOne;
 use HJenneberg\FizzBuzz\FizzBuzzThreeB;
 use HJenneberg\FizzBuzz\FizzBuzzThreeC;
 use HJenneberg\FizzBuzz\FizzBuzzTwo;
-use HJenneberg\FizzBuzz\FizzBuzzTwoA;
-use HJenneberg\FizzBuzz\FizzBuzzTwoB;
-use HJenneberg\FizzBuzz\FizzBuzzTwoC;
-use HJenneberg\FizzBuzz\FizzBuzzTwoCleaner;
-use HJenneberg\FizzBuzz\FizzBuzzTwoCleanest;
 use PhpBench\Benchmark\Metadata\Annotations\Iterations;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 
@@ -32,31 +27,6 @@ final class FizzBuzzBench
     public function benchTwo()
     {
         FizzBuzzTwo::get(self::FIZZ_UP_TO);
-    }
-
-    public function benchTwoA()
-    {
-        FizzBuzzTwoA::get(self::FIZZ_UP_TO);
-    }
-
-    public function benchTwoB()
-    {
-        FizzBuzzTwoB::get(self::FIZZ_UP_TO);
-    }
-
-    public function benchTwoC()
-    {
-        FizzBuzzTwoC::get(self::FIZZ_UP_TO);
-    }
-
-    public function benchTwoCleaner()
-    {
-        FizzBuzzTwoCleaner::get(self::FIZZ_UP_TO);
-    }
-
-    public function benchTwoCleanest()
-    {
-        FizzBuzzTwoCleanest::get(self::FIZZ_UP_TO);
     }
 
     public function benchThreeB()

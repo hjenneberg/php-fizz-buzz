@@ -3,11 +3,6 @@
 declare(strict_types=1);
 
 use HJenneberg\FizzBuzz\FizzBuzzTwo;
-use HJenneberg\FizzBuzz\FizzBuzzTwoA;
-use HJenneberg\FizzBuzz\FizzBuzzTwoB;
-use HJenneberg\FizzBuzz\FizzBuzzTwoC;
-use HJenneberg\FizzBuzz\FizzBuzzTwoCleaner;
-use HJenneberg\FizzBuzz\FizzBuzzTwoCleanest;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -30,10 +25,5 @@ final class FizzBuzzTwoTest extends TestCase
         ];
 
         self::assertSame($expected, FizzBuzzTwo::get(16));
-        self::assertSame($expected, FizzBuzzTwoA::get(16));
-        self::assertSame($expected, FizzBuzzTwoB::get(16));
-        self::assertSame($expected, FizzBuzzTwoC::get(16));
-        self::assertSame($expected, FizzBuzzTwoCleaner::get(16));
-        self::assertSame($expected, FizzBuzzTwoCleanest::get(16));
     }
 }
