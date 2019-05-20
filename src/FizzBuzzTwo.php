@@ -11,7 +11,7 @@ use HJenneberg\FizzBuzz\Parts\Fizz;
 /**
  * Class FizzBuzzTwo
  */
-class FizzBuzzTwo implements FizzBuzzStaticInterface
+final class FizzBuzzTwo implements FizzBuzzStaticInterface
 {
     /**
      * @var Closure
