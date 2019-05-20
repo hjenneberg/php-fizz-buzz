@@ -5,18 +5,14 @@ declare(strict_types=1);
 namespace HJenneberg\FizzBuzz;
 
 use Closure;
+use HJenneberg\FizzBuzz\Parts\Buzz;
+use HJenneberg\FizzBuzz\Parts\Fizz;
 
 /**
  * Class FizzBuzzOne
  */
 final class FizzBuzzOne implements FizzBuzzStaticInterface
 {
-    const FIZZ_DIV = 3;
-    const FIZZ_ITSELF = 'Fizz';
-
-    const BUZZ_DIV = 5;
-    const BUZZ_ITSELF = 'Buzz';
-
     /**
      * @param int $limit
      *
@@ -47,13 +43,13 @@ final class FizzBuzzOne implements FizzBuzzStaticInterface
     private static function decideOn(int $i)
     {
         if (self::isFizz($i) && self::isBuzz($i)) {
-            return self::FIZZ_ITSELF . self::BUZZ_ITSELF;
+            return Fizz::title() . Buzz::title();
         }
         if (self::isBuzz($i)) {
-            return self::BUZZ_ITSELF;
+            return Buzz::title();
         }
         if (self::isFizz($i)) {
-            return self::FIZZ_ITSELF;
+            return Fizz::title();
         }
 
         return $i;
@@ -66,7 +62,17 @@ final class FizzBuzzOne implements FizzBuzzStaticInterface
      */
     private static function isFizz(int $i): bool
     {
-        return self::isDividableBy(self::FIZZ_DIV)($i);
+        return self::isDividableBy(Fizz::divisor())($i);
+    }
+
+    /**
+     * @param int $i
+     *
+     * @return bool
+     */
+    private static function isBuzz(int $i): bool
+    {
+        return self::isDividableBy(Buzz::divisor())($i);
     }
 
     /**
@@ -80,15 +86,4 @@ final class FizzBuzzOne implements FizzBuzzStaticInterface
             return 0 === $i % $by;
         };
     }
-
-    /**
-     * @param int $i
-     *
-     * @return bool
-     */
-    private static function isBuzz(int $i): bool
-    {
-        return self::isDividableBy(self::BUZZ_DIV)($i);
-    }
-
 }
