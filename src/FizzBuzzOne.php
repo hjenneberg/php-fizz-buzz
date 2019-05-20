@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace HJenneberg\FizzBuzz;
 
+use Closure;
+
 /**
  * Class FizzBuzzOne
  */
-class FizzBuzzOne implements FizzBuzzStaticInterface
+final class FizzBuzzOne implements FizzBuzzStaticInterface
 {
+    const FIZZ_DIV = 3;
+    const FIZZ_ITSELF = 'Fizz';
+
+    const BUZZ_DIV = 5;
+    const BUZZ_ITSELF = 'Buzz';
+
     /**
      * @param int $limit
      *
@@ -16,23 +24,71 @@ class FizzBuzzOne implements FizzBuzzStaticInterface
      */
     public static function get(int $limit): array
     {
-        $items = array_combine(range(1, $limit), range(1, $limit));
-        $items = array_map(
-            function (int $item) {
-                if (0 === $item % 15) {
-                    return 'FizzBuzz';
-                }
-                if (0 === $item % 5) {
-                    return 'Buzz';
-                }
-                if (0 === $item % 3) {
-                    return 'Fizz';
-                }
-                return $item;
-            },
-            $items
-        );
-
-        return $items;
+        return array_map([__CLASS__, 'decideOn'], self::getRange($limit));
     }
+
+    /**
+     * @param int $limit
+     *
+     * @return array
+     */
+    private static function getRange(int $limit): array
+    {
+        $range = range(1, $limit);
+
+        return array_combine($range, $range);
+    }
+
+    /**
+     * @param int $i
+     *
+     * @return string|int
+     */
+    private static function decideOn(int $i)
+    {
+        if (self::isFizz($i) && self::isBuzz($i)) {
+            return self::FIZZ_ITSELF . self::BUZZ_ITSELF;
+        }
+        if (self::isBuzz($i)) {
+            return self::BUZZ_ITSELF;
+        }
+        if (self::isFizz($i)) {
+            return self::FIZZ_ITSELF;
+        }
+
+        return $i;
+    }
+
+    /**
+     * @param int $i
+     *
+     * @return bool
+     */
+    private static function isFizz(int $i): bool
+    {
+        return self::isDividableBy(self::FIZZ_DIV)($i);
+    }
+
+    /**
+     * @param int $by
+     *
+     * @return Closure
+     */
+    private static function isDividableBy(int $by): Closure
+    {
+        return function ($i) use ($by) {
+            return 0 === $i % $by;
+        };
+    }
+
+    /**
+     * @param int $i
+     *
+     * @return bool
+     */
+    private static function isBuzz(int $i): bool
+    {
+        return self::isDividableBy(self::BUZZ_DIV)($i);
+    }
+
 }

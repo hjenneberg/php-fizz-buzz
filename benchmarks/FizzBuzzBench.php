@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use HJenneberg\FizzBuzz\FizzBuzzOne;
-use HJenneberg\FizzBuzz\FizzBuzzOneCleaner;
 use HJenneberg\FizzBuzz\FizzBuzzThreeB;
 use HJenneberg\FizzBuzz\FizzBuzzThreeC;
 use HJenneberg\FizzBuzz\FizzBuzzTwo;
@@ -28,11 +27,6 @@ final class FizzBuzzBench
     public function benchOne()
     {
         FizzBuzzOne::get(self::FIZZ_UP_TO);
-    }
-
-    public function benchOneCleaner()
-    {
-        FizzBuzzOneCleaner::get(self::FIZZ_UP_TO);
     }
 
     public function benchTwo()
